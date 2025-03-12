@@ -127,7 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Linked Lists and Recursion Programming Project.cpp" />
+    <ClCompile Include="project 1.cpp" />
+    <ClCompile Include="SinglyLinkedList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

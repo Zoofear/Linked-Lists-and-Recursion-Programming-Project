@@ -15,8 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Linked Lists and Recursion Programming Project.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="SinglyLinkedList.h">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
