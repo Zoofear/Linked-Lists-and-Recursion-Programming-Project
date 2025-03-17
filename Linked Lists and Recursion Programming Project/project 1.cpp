@@ -1,4 +1,4 @@
-//
+//This branch of the program has the class SinglyLinkedList with the updated functionality of sorting the list into two separate even and odd lists. Pt2 is the unaltered program and this is where the fucntion is tested
 //
 
 #include <iostream>
