@@ -18,5 +18,8 @@
     <ClCompile Include="SinglyLinkedList.h">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="project 1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
