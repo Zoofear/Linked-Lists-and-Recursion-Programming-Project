@@ -16,6 +16,41 @@ private:
 	Node* head; // Pointer to the first node
 	Node* tail; // Pointer to the final node
 	int count = 0; //counting the elements in the list
+
+	void reversePrint(Node* head)
+	{
+		Node* temp = head;
+		if (tail == head)
+		{
+			while (temp->next)
+			{
+				temp->next;
+			}
+
+			tail = temp;
+			
+			std::cout << "nullptr" << std::endl;
+
+			return;
+		}
+		else
+		{
+			temp = head;
+			while (temp)
+			{
+				if (temp->next == tail)
+				{
+					tail = temp;
+				}
+
+				temp->next;
+			}
+
+			std::cout << temp->data << " -> ";
+			reversePrint();
+		}
+	}
+
 public:
 	SinglyLinkedList() : head(nullptr), tail(nullptr), count(0) {} // Constructor initializes the head to nullptr
 	
@@ -93,53 +128,6 @@ public:
 		}
 	}
 
-	void evenOdd(SinglyLinkedList &even, SinglyLinkedList &odd)
-	{
-		if (!head)	//check to make sure that your normal list is filled
-		{
-			std::cout << "You need to fill your base list first" << std::endl;
-			return;
-		}
-		Node* temp = head;
-		while (temp)
-		{
-			double num = static_cast<double>(temp->data);		//Need to set a temporary variable to the double to check if it is cleanly divisible by two
-			if (temp->data / 2 == num / 2)						//Even odd checker
-			{
-				if (even.count == 0)							//Checks whether or not list is empty
-				{
-					even.head = temp;							//sets the head pointer in the list even to the current pointer in this list
-				}
-				else
-				{
-					even.tail->next = temp;						//sets the next link of the tail pointer in the list even to the current pointer in this list
-				}
-				even.tail = temp;								//sets the even list tail to the current pointer
-				even.count++;									//adds one to the current count in the even list
-				temp = temp->next;								//iterates to the next node in the list
-				even.tail->next = nullptr;						//sets up the next node in the even list
-			}
-			else if (temp->data / 2 != num / 2)
-			{
-				if (odd.count == 0)
-				{
-					odd.head = temp;
-				}
-				else
-				{
-					odd.tail->next = temp;
-				}
-				odd.tail = temp;
-				odd.count++;
-				temp = temp->next;
-				odd.tail->next = nullptr;
-			}
-		}
-		head = nullptr;
-		tail = nullptr;
-		count = 0;
-	}
-
 	// Function to display the linked list
 	void display() {
 
@@ -161,5 +149,10 @@ public:
 			delete temp;
 		}
 		count = 0;
+	}
+	
+	void reversePrint()
+	{
+		reversePrint(head);
 	}
 };
