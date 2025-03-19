@@ -27,5 +27,6 @@ int main()
 	cout << "printing list in reverse" << endl;
 	list.reversePrint();
 
+	cout << "hi" << endl;
 
 };

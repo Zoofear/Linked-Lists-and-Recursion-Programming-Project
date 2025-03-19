@@ -19,35 +19,28 @@ private:
 
 	void reversePrint(Node* head)
 	{
-		Node* temp = head;
-		if (tail == head)
+		if (head == nullptr)
 		{
-			while (temp->next)
-			{
-				temp->next;
-			}
-
-			tail = temp;
-			
-			std::cout << "nullptr" << std::endl;
-
+			std::cout << " Count (" << count << ") Reversed List : nullptr";
 			return;
 		}
 		else
 		{
-			temp = head;
-			while (temp)
+			reversePrint(head->next);
+			std::cout << " <- " << head->data;
+			count--;
+
+			if (count == 0)
 			{
-				if (temp->next == tail)
+				Node* temp = head;
+				while (temp)
 				{
-					tail = temp;
+					temp = temp->next;
+					count++;
 				}
 
-				temp->next;
+				std::cout << "\n";
 			}
-
-			std::cout << temp->data << " -> ";
-			reversePrint();
 		}
 	}
 
@@ -131,7 +124,7 @@ public:
 	// Function to display the linked list
 	void display() {
 
-		std::cout << " Count (" << count << ") List :";
+		std::cout << " Count (" << count << ") List : ";
 
 		Node* temp = head;
 		while (temp) {
@@ -155,4 +148,5 @@ public:
 	{
 		reversePrint(head);
 	}
+
 };
